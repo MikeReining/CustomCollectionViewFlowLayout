@@ -40,6 +40,7 @@
 		271A46901A7DB4B8002902DC /* e.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 271A46761A7DB4B8002902DC /* e.jpg */; };
 		271A46911A7DB4B8002902DC /* f.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 271A46771A7DB4B8002902DC /* f.jpg */; };
 		271A46921A7DB4B8002902DC /* g.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 271A46781A7DB4B8002902DC /* g.jpg */; };
+		271A46941A7DB97E002902DC /* MySupplementaryReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A46931A7DB97E002902DC /* MySupplementaryReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		271A46761A7DB4B8002902DC /* e.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = e.jpg; sourceTree = "<group>"; };
 		271A46771A7DB4B8002902DC /* f.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = f.jpg; sourceTree = "<group>"; };
 		271A46781A7DB4B8002902DC /* g.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = g.jpg; sourceTree = "<group>"; };
+		271A46931A7DB97E002902DC /* MySupplementaryReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySupplementaryReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				271A463A1A7DB2AE002902DC /* AppDelegate.swift */,
 				271A463E1A7DB2AE002902DC /* Main.storyboard */,
+				271A46931A7DB97E002902DC /* MySupplementaryReusableView.swift */,
 				271A465C1A7DB396002902DC /* MyCollectionViewCell.swift */,
 				271A465A1A7DB330002902DC /* MyCollectionViewController.swift */,
 				271A46411A7DB2AE002902DC /* Images.xcassets */,
@@ -330,6 +333,7 @@
 				271A465B1A7DB330002902DC /* MyCollectionViewController.swift in Sources */,
 				271A463B1A7DB2AE002902DC /* AppDelegate.swift in Sources */,
 				271A465D1A7DB396002902DC /* MyCollectionViewCell.swift in Sources */,
+				271A46941A7DB97E002902DC /* MySupplementaryReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

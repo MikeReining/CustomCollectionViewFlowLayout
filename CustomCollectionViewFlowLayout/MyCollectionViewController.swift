@@ -16,54 +16,95 @@ class MyCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-
-
-        // Do any additional setup after loading the view.
-    }
+        abcImages = ["a.jpg",
+            "b.jpg",
+            "c.jpg",
+            "d.jpg",
+            "e.jpg",
+            "f.jpg",
+            "g.jpg",
+            "h.jpg",
+            "i.jpg",
+            "j.jpg",
+            "k.jpg",
+            "l.jpg",
+            "m.jpg",
+            "n.jpg",
+            "o.jpg",
+            "p.jpg",
+            "q.jpg",
+            "r.jpg",
+            "s.jpg",
+            "t.jpg",
+            "u.jpg",
+            "v.jpg",
+            "w.jpg",
+            "x.jpg",
+            "y.jpg",
+            "z.jpg",]
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         //#warning Incomplete method implementation -- Return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
-        return 0
+        return abcImages.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as MyCollectionViewCell
     
         // Configure the cell
-    
+        let image = UIImage(named: abcImages[indexPath.row])
+        cell.imageView.image = image
         return cell
     }
-
+    
+    // MARK: UICollectionViewFlowLayoutDelegate
+    // return images in their original size
+    func collectionView(collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    
+    let image = UIImage(named: abcImages[indexPath.row])
+    let newImageSize = CGSizeMake(100, 100) // To create an item with a given size use CGSizeMake
+    return newImageSize
+    }
+    
     // MARK: UICollectionViewDelegate
 
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+            let myLayout = UICollectionViewFlowLayout()
+            myLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
+            collectionView.setCollectionViewLayout(myLayout, animated: true)
+    }
+    
+    // MARK: Supplementary View Protocol Methods
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        var header: MySupplementaryReusableView?
+        
+        if kind == UICollectionElementKindSectionHeader {
+            header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "MyHeader", forIndexPath: indexPath) as? MySupplementaryReusableView
+            
+            header?.headerLabel.text = "ABC Alphabet"
+        }
+        return header!
+    }
+    
+    
+    
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
