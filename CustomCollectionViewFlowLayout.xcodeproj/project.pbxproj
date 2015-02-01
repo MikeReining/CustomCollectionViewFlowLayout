@@ -41,6 +41,7 @@
 		271A46911A7DB4B8002902DC /* f.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 271A46771A7DB4B8002902DC /* f.jpg */; };
 		271A46921A7DB4B8002902DC /* g.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 271A46781A7DB4B8002902DC /* g.jpg */; };
 		271A46941A7DB97E002902DC /* MySupplementaryReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A46931A7DB97E002902DC /* MySupplementaryReusableView.swift */; };
+		279C7D381A7DC09D00E5DDB6 /* MyFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C7D371A7DC09D00E5DDB6 /* MyFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		271A46771A7DB4B8002902DC /* f.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = f.jpg; sourceTree = "<group>"; };
 		271A46781A7DB4B8002902DC /* g.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = g.jpg; sourceTree = "<group>"; };
 		271A46931A7DB97E002902DC /* MySupplementaryReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySupplementaryReusableView.swift; sourceTree = "<group>"; };
+		279C7D371A7DC09D00E5DDB6 /* MyFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,9 +137,7 @@
 			children = (
 				271A463A1A7DB2AE002902DC /* AppDelegate.swift */,
 				271A463E1A7DB2AE002902DC /* Main.storyboard */,
-				271A46931A7DB97E002902DC /* MySupplementaryReusableView.swift */,
-				271A465C1A7DB396002902DC /* MyCollectionViewCell.swift */,
-				271A465A1A7DB330002902DC /* MyCollectionViewController.swift */,
+				279C7D391A7DC0A600E5DDB6 /* View Controllers */,
 				271A46411A7DB2AE002902DC /* Images.xcassets */,
 				271A46431A7DB2AE002902DC /* LaunchScreen.xib */,
 				271A46381A7DB2AE002902DC /* Supporting Files */,
@@ -202,6 +202,17 @@
 				271A46781A7DB4B8002902DC /* g.jpg */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		279C7D391A7DC0A600E5DDB6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				279C7D371A7DC09D00E5DDB6 /* MyFlowLayout.swift */,
+				271A46931A7DB97E002902DC /* MySupplementaryReusableView.swift */,
+				271A465C1A7DB396002902DC /* MyCollectionViewCell.swift */,
+				271A465A1A7DB330002902DC /* MyCollectionViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279C7D381A7DC09D00E5DDB6 /* MyFlowLayout.swift in Sources */,
 				271A465B1A7DB330002902DC /* MyCollectionViewController.swift in Sources */,
 				271A463B1A7DB2AE002902DC /* AppDelegate.swift in Sources */,
 				271A465D1A7DB396002902DC /* MyCollectionViewCell.swift in Sources */,
@@ -527,6 +539,7 @@
 				271A46561A7DB2AE002902DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		271A46571A7DB2AE002902DC /* Build configuration list for PBXNativeTarget "CustomCollectionViewFlowLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +548,7 @@
 				271A46591A7DB2AE002902DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

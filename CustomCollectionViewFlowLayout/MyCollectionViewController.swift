@@ -15,6 +15,11 @@ class MyCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let myLayout = MyFlowLayout()
+        self.collectionView?.setCollectionViewLayout(myLayout, animated: true)
+        let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: "handlePinch:")
+        collectionView?.addGestureRecognizer(pinchRecognizer)
 
         abcImages = ["a.jpg",
             "b.jpg",
@@ -82,14 +87,14 @@ class MyCollectionViewController: UICollectionViewController {
     return newImageSize
     }
     
-    // MARK: UICollectionViewDelegate
-
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-            let myLayout = UICollectionViewFlowLayout()
-            myLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
-            collectionView.setCollectionViewLayout(myLayout, animated: true)
-        
-    }
+//    // MARK: UICollectionViewDelegate
+//
+//    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//            let myLayout = UICollectionViewFlowLayout()
+//            myLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
+//            collectionView.setCollectionViewLayout(myLayout, animated: true)
+//        
+//    }
     
     // MARK: Supplementary View Protocol Methods
     
@@ -104,6 +109,37 @@ class MyCollectionViewController: UICollectionViewController {
         return header!
     }
     
+    // MARK: Pinch Recognizer
+    
+    func handlePinch(gesture: UIPinchGestureRecognizer) {
+        let layout = collectionView?.collectionViewLayout as MyFlowLayout
+        if gesture.state == UIGestureRecognizerState.Began {
+            
+            // Get initial pinch location
+            let initialPinchPoint = gesture.locationInView(collectionView)
+            
+            // Convert pinch location into a specific cell
+            let pinchedCellPath = collectionView?.indexPathForItemAtPoint(initialPinchPoint)
+            
+            // Store the indexPath to cell
+            layout.currentCellPath = pinchedCellPath
+            
+        }
+        
+        else if gesture.state == UIGestureRecognizerState.Changed {
+            // Store the new center location
+            layout.currentCellCenter = gesture.locationInView(collectionView)
+            
+            // Store the scale value
+            layout.setCurrentCellScale(gesture.scale)
+        } else {
+            collectionView?.performBatchUpdates({
+                layout.currentCellPath = nil
+                layout.currentCellScale = 1.0
+            }, completion: nil)
+        }
+        
+    }
     
     
     /*
