@@ -88,6 +88,7 @@ class MyCollectionViewController: UICollectionViewController {
             let myLayout = UICollectionViewFlowLayout()
             myLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
             collectionView.setCollectionViewLayout(myLayout, animated: true)
+        
     }
     
     // MARK: Supplementary View Protocol Methods
